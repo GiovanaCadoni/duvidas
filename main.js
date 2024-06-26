@@ -1,43 +1,38 @@
-const form = document.getElementById('form-list');
-const novaTarefa = [];
+const form = document.getElementById('form-tarefa');
+const tarefas = [];
 
-let linhas= '';
+let linhas = '';
 
-form.addEventListener ('submit', function(e) {
+form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    atualizaLinha();
-    atualizaTabela();
+    adicionaLinha();
+    atualizaTarefa();
 })
 
-function atualizaLinha() {
-    const nova = document.getElementById('nova-tarefa');
+function  adicionaLinha() {
+    const inputTarefa = document.getElementById('nova-tarefa');
 
-    if(novaTarefa.includes(nova.value)) {
-        alert(`A tarefa ${nova.value} já foi inserida`)
-    } else {
-        novaTarefa.push(nova.value);
+    if (tarefas.includes(inputTarefa.value)) {
+        alert(`A tarefa ${inputTarefa.value} já foi inserida`);
+    } else (
+        tarefas.push(inputTarefa.value)
+    );
 
-        linha += `<li>${nova.value}</li>`;
-
-        linhas += linha;
-    }
-
-    nova.value = '';
+    let linha = `<li>${inputTarefa.value}</li>`;
+    linhas = linha;
 }
 
-function atualizaTabela() {
-    const attTabela = document.querySelector('ul');
-    attTabela.innerHTML = linhas;
+function atualizaTarefa() {
+    const corpoTarefa = document.querySelector('ul');
+    corpoTarefa.innerHTML = linhas;
 
-    attTabela.addEventListener('click', function(e) {
-        if(e.target.classList.contains('check')) {
+    atualizaTarefa.addEventListener('click', function(e) {
+        if (e.target.classList.contains('check')) {
             e.target.classList.remove('check');
         } else {
             e.target.classList.add('check');
         }
     });
+
 }
-
-
-
