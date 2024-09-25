@@ -2,55 +2,102 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
 }
 
-body {
-    background-color: lightskyblue;
-    padding: 16px 0;
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.nav-link {
+    text-align: center;
 }
 
 header {
-    text-align: center;
-    text-transform: uppercase;
-    font-style: italic;
-    padding: 24px 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: lightcyan;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
-form {
-    padding: 24px 0;
-    text-align: center;
+header > .container{
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
 }
 
-form h2 {
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-flex {
+    display: flex;
+}
+
+#about img {
+    max-width: 400px;
+    margin-right: 24px;
+    padding-left: 24px;
+}
+
+section{
+    height: 100vh;
+    padding-top: 50px;
+}
+
+section h2 {
     margin-bottom: 16px;
 }
 
-input, button {
-    padding: 8px;
+section p {
+    display: inline;
+    margin-left: 16px;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 640px) {
+    .container-flex {
+        display: block;
+    }
+
+    .container {
+        max-width: 90%;
+    }
+
+    header img {
+        align-items: center;
+    }
+
+    #cards {
+        display: block;
+        width: 1024px;
+        margin-left: 5%;
+    }
+}
+
+@media screen and (min-width: 641px) and (max-width: 1023px) {
+    .container-flex {
+        display: block;
+    }
+
+    .container {
+        max-width: 90%;
+    }
+
+    header img {
+        align-items: center;
+    }
+
+    #cards {
+        width: 1024px;
+        display: block;
+    }
 }
 
 
-button{
-    background-color: #009432;
-    border: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #fff;
-    cursor: pointer;
-}
-
-ul {
-    flex-wrap: wrap;
-}
-
-ul li {
-    text-align: justify;
-    padding: 3px;
-    cursor: pointer;
-    text-align: center;
-}
-
-.check {
-    text-decoration: line-through;
-}
